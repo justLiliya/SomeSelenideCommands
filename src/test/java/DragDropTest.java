@@ -7,6 +7,7 @@ public class DragDropTest extends TestBase{
 
     @Test
     public void MovingElementTest(){
+        //рабочий драгндроп
         open("/drag_and_drop");
         $(".example").shouldHave(text("Drag and Drop"));
         $("#column-a").dragAndDropTo("#column-b");
@@ -15,6 +16,7 @@ public class DragDropTest extends TestBase{
 
     @Test
     public void MovingElementWithActionCommandsTest(){
+        //такой драгндроп не работает
         open("/drag_and_drop");
         $(".example").shouldHave(text("Drag and Drop"));
         actions().moveToElement($("#column-a")).dragAndDrop($("#column-a"), $("#column-b")).perform();
