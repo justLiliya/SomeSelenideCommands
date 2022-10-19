@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
@@ -22,4 +23,14 @@ public class DragDropTest extends TestBase{
         actions().moveToElement($("#column-a")).dragAndDrop($("#column-a"), $("#column-b")).perform();
         $("#column-b").shouldHave(text("A"));
     }
+
+    @Test
+    public void MovingElementWithActionCommandsTest1() {
+        //такой драгндроп тоже не работает
+        open("/drag_and_drop");
+        actions().clickAndHold($("#column-a")).moveToElement($("#column-b")).release().build().perform();
+        $("#column-b").shouldHave(text("A"));
+    }
+
+
 }
