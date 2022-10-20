@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class GithubHoverTest {
 
     @Test
-    public void SelectSolutionsEnterprizeTest() {
+    public void selectSolutionsEnterprizeTest() {
         open("https://github.com/");
         $(byText("Solutions")).hover();
         $(byText("Enterprise")).click();

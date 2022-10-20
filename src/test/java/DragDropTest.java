@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class DragDropTest extends TestBase{
 
     @Test
-    public void MovingElementTest(){
+    public void movingElementTest(){
         //рабочий драгндроп
         open("/drag_and_drop");
         $(".example").shouldHave(text("Drag and Drop"));
@@ -16,7 +16,7 @@ public class DragDropTest extends TestBase{
     }
 
     @Test
-    public void MovingElementWithActionCommandsTest(){
+    public void movingElementWithActionCommandsTest(){
         //такой драгндроп не работает
         open("/drag_and_drop");
         $(".example").shouldHave(text("Drag and Drop"));
@@ -25,7 +25,7 @@ public class DragDropTest extends TestBase{
     }
 
     @Test
-    public void MovingElementWithActionCommandsTest1() {
+    public void movingElementWithActionCommandsTest1() {
         //такой драгндроп тоже не работает
         open("/drag_and_drop");
         actions().clickAndHold($("#column-a")).moveToElement($("#column-b")).release().build().perform();
